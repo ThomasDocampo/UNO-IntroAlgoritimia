@@ -1,2 +1,1 @@
 Print("hola")
-Print("Prueba")
