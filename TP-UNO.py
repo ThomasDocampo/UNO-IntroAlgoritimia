@@ -1,11 +1,11 @@
 import random
 
 '''
-
+Funcion tirar , validar jugada, 
 
 '''
 
-mazo = ["1 ROJO", "2 ROJO", "3 ROJO", "4 ROJO","5 ROJO"]
+mazo = ["1 ROJO", "2 ROJO", "3 ROJO", "4 ROJO","5 ROJO"] #Otro planteo?
 
 
 mazoPC = []
@@ -22,11 +22,15 @@ def mostrarMazo(msg, mazo) :
     print(msg)
     for i in range(0,len(mazo)) :
         print(i+1, " -> ",mazo[i])
+
+#Programa principal
+#While para manejar los turnos
     
         
 mazoPC = repartir(7,mazo)
 mazoUsuario = repartir(7,mazo)
 mostrarMazo("el mazo de la pc es",mazoPC)
+
 
 mostrarMazo("tu mazo es",mazoUsuario)
 
