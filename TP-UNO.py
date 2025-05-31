@@ -1,11 +1,10 @@
 import random
 
 '''
-Funcion tirar , validar jugada, 
+Funcion tirar , validar jugada, una funciona para que juegue la compu
 
 '''
-
-mazo = ["1 ROJO", "2 ROJO", "3 ROJO", "4 ROJO","5 ROJO"] #Otro planteo?
+mazo = [[1,"ROJO"], [2,"ROJO"], [3,"ROJO"], [3,"ROJO"],[4,"ROJO"],[1,"AZUL"], [2,"AZUL"], [3,"AZUL"], [3,"AZUL"],[4,"AZUL"]] #Otro planteo?
 
 mazoPC = []
 mazoUsuario = []
