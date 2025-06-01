@@ -24,8 +24,6 @@ def mostrarMazo(mazo):
         
 def validarCarta (cartaEnJuego, cartaUsuario):
       check = False
-      print (("aca estoy viendo que onda dcesde la funcion validar carta carta en juego ->"), cartaEnJuego)
-      print (("aca estoy viendo que onda dcesde la funcion validar carta jugador ->"), cartaUsuario)
       if (cartaEnJuego[0] == cartaUsuario[0] or cartaEnJuego[1] == cartaUsuario[1]):
           check = True
       return check
