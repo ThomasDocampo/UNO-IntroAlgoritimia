@@ -78,7 +78,7 @@ def turnoPC(mazoPC, mazoGeneral, cartaEnJuego):
         else:
             i += 1
 
-    if not jugada_valida:
+    if jugada_valida==False:
         print("La computadora no tiene cartas válidas. Toma una carta...")
         nueva_carta = repartir(1, mazoGeneral)[0]
         mazoPC.append(nueva_carta)
