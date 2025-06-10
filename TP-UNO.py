@@ -95,6 +95,9 @@ def turnoPC(mazoPC, mazoGeneral, cartaEnJuego):
     return cartaEnJuego, mazoPC
 
 #Juego
+#aca va el menu 
+#hay que hacer ranking 
+
 mazoPC = repartir(7,mazo)
 mazoUsuario = repartir(7,mazo)
 indiceUsuario = 0
