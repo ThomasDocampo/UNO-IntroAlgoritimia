@@ -61,8 +61,8 @@ def turnoUsuario (mazoUsuario, mazoGeneral, cartaEnJuego):
               del mazoUsuario[opcion]
               salir = True
           else:
-              print("no es una carta valida amiguin")
-              print ("la carta en juego es: ", cartaEnJuego[0],cartaEnJuego[1])
+              print("No es una carta valida.")
+              print ("La carta en juego es: ", cartaEnJuego[0],cartaEnJuego[1])
     return cartaEnJuego, mazoUsuario
 
 #Funcion turno de la computadora 
@@ -84,12 +84,12 @@ def turnoPC(mazoPC, mazoGeneral, cartaEnJuego):
     if jugada_valida==False:
         print("La computadora no tiene cartas válidas. Toma una carta...")
         nueva_carta = repartir(1, mazoGeneral)[0]
-        mazoPC.append(nueva_carta)
+       
         if validarCarta(cartaEnJuego, nueva_carta):
             cartaEnJuego = nueva_carta
             print("¡La computadora jugó la carta que tomó! ", cartaEnJuego[0],cartaEnJuego[1])
-            mazoPC.pop()  # La jugó, así que la saca del mazo
         else:
+            mazoPC.append(nueva_carta)
             print("La computadora no pudo jugar. Pasa el turno.")
 
     return cartaEnJuego, mazoPC
@@ -102,7 +102,7 @@ cartaEnJuego = repartir(1,mazo)[0]
 turno = 0  # 0 = Usuario, 1 = PC
 
 while len(mazoPC) > 0 and len(mazoUsuario) > 0 :
-    os.system('cls')
+    os.system('cls') #limpiar consola (en windows)
     print ("\nLa cantidad de cartas que tiene la computadora es: ", len(mazoPC))
     print ("\nLa carta en juego es: ", cartaEnJuego[0],cartaEnJuego[1])
     
