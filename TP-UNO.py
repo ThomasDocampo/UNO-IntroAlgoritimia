@@ -11,6 +11,16 @@ mazoPC = []
 mazoUsuario = []
 cartaEnJuego = []
 
+#Lista de jugadores y sus puntuaciones que simulan un ranking
+jugadores = [
+    ["bruno", 70],
+    ["mar", 65],
+    ["vicky", 55],
+    ["thomas", 50],
+    ["vera", 45],
+    ["lu", 30]
+]
+
 #Funcion para repartir las cartas a los jugadores
 def repartir(cant,mazo):
      lista = []
@@ -113,8 +123,35 @@ def reglas():
 
 def ranking():
     print("\n=== RANKING DE JUGADORES ===")
-    print("Esta función aún no está implementada")
+
+    ranking_ordenado = []
+    for jugador in jugadores:
+        ranking_ordenado.append(jugador)
+    
+    # Ordenar la lista usando el método burbuja
+    for i in range(len(ranking_ordenado)):
+        for j in range(len(ranking_ordenado)-1):
+            if ranking_ordenado[j][1] < ranking_ordenado[j+1][1]:
+                # Intercambiar posiciones
+                temp = ranking_ordenado[j]
+                ranking_ordenado[j] = ranking_ordenado[j+1]
+                ranking_ordenado[j+1] = temp
+    
+    # Mostrar el ranking
+    for i in range(len(ranking_ordenado)):
+        print(f"{i+1}. {ranking_ordenado[i][0]}: {ranking_ordenado[i][1]} puntos")
+    
     input("\nPresione Enter para continuar...")
+
+def actualizar_puntuacion(nombre, puntos):
+    # Buscar el jugador en la lista y actualizar sus puntos
+    for i in range(len(jugadores)):
+        if jugadores[i][0].lower() == nombre.lower():
+            jugadores[i][1] += puntos
+            return
+    
+    # Si no existe el jugador, agregarlo a la lista
+    jugadores.append([nombre.lower(), puntos])
 
 def menu():
     while True:
@@ -168,9 +205,11 @@ def iniciar_juego():
 
         if len(mazoUsuario) == 0:
             print("¡Ganaste!")
+            actualizar_puntuacion(nombre_usuario, 100)
         else:
             print("¡Ganó la computadora!")
+            actualizar_puntuacion(nombre_usuario, -50)
         
         input("\nPresione Enter para continuar...")
 
-
+iniciar_juego()
